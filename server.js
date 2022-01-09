@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
 
+//eslint: npx eslint --init
+
+
 const app = express();
 
 //adding the Express middleware to serve static files
