@@ -9,11 +9,18 @@ const app = express();
 app.use(express.static(path.join(__dirname, './static')));
 
 const port = 3000;
+//using view engine ejs
+app.set('view engine', 'ejs');
+//adding the views
+app.set('views', path.join(__dirname, './views'));
+
 // thats a collback (request,response)
 app.get('/', (request, response) => {
   //response.send('Hello world');
   //instead of sending text, send page
-  response.sendFile(path.join(__dirname, './static/index.html'));
+  //response.sendFile(path.join(__dirname, './static/index.html'));
+  //instead of rendering page, rendering dynamically from template, using response
+  response.render('pages/index', { pageTitle: 'Welcome' });
 });
 
 app.get('/speakers', (request, response) => {
