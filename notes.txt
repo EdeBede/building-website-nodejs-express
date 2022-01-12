@@ -1,0 +1,16 @@
+Syntax
+
+app.use(callback); // middleware to be executed
+app.use(path, callback); // middleware executed if path matched
+app.[get | post | put | delete](path, callback); //
+
+Express middlewares:
+ execute any code
+ operate on request response objects
+ end request response cycle- routing middleware
+ call next middleware
+
+Express request lifecycle
+  Initialize- execute java script, which registers middlewares
+  Start http server, and listen on a port
+  When a request comes, all middlewares executed in order
